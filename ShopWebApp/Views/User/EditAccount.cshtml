@@ -1,0 +1,129 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutForUser";
+}
+@model EditUserVM
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Checkout example for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+
+        <form method="post" asp-action="EditAccount" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Редактирование аккаунта</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <input hidden asp-for="Password" class="form-control" required />
+                            <input hidden asp-for="Id" class="form-control" required />
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Name">Имя</label>
+                                <input asp-for="Name" class="form-control" placeholder="Имя" required>
+                                <div class="invalid-feedback">
+                                    Пожалуйста, введите корректное имя.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Surname">Фамилия</label>
+                                <input asp-for="Surname" class="form-control" placeholder="Фамилия" required>
+                                <div class="invalid-feedback">
+                                    Пожалуйста, введите корректную фамилию.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Email">Электронная почта</label>
+                                <div class="input-group">
+                                    <input asp-for=Email type="email" class="form-control" placeholder="you@example.com" required>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Пожалуйста, введите корректную электронную почту.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Login">Имя пользователя</label>
+                                <input asp-for=Login class="form-control" placeholder="Имя пользователя" required>
+                                <div class="invalid-feedback">
+                                    Пожалуйста, введите корректное имя пользователя.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="Image">Image</label>
+                                <input asp-for="Image" type="file" class="form-control" placeholder="Image" required>
+                                <span asp-validation-for="Image" class="text-danger" />
+                                <div class="invalid-feedback">
+                                    Пожалуйста, добавьте фотографию.
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <button class="btn btn-primary btn-lg btn-block" asp-route-id="@Model.Id" type="submit">Сохранить</button>
+                    </form>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+</html>

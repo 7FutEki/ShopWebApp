@@ -1,0 +1,33 @@
+﻿@model EditProductVM
+@{
+    Layout = "_Layout";
+
+}
+<form method="post" asp-action="Edit" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" class="form-control" placeholder="Enter title">
+        <span asp-validation-for="Title" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Description">
+        <span asp-validation-for="Description" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Manufacturer">Manufacturer</label>
+        <input asp-for="Manufacturer" class="form-control" placeholder="Manufacturer">
+        <span asp-validation-for="Manufacturer" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Price</label>
+        <input asp-for="Price" class="form-control" placeholder="Price">
+        <span asp-validation-for="Price" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,32 @@
+﻿@model CreateProductVM
+@{
+    Layout = "_Layout";
+}
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title">Название товара</label>
+        <input asp-for="Title" class="form-control" placeholder="Название">
+        <span asp-validation-for="Title" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Описание товара</label>
+        <input asp-for="Description" class="form-control" placeholder="Описание">
+        <span asp-validation-for="Description" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Manufacturer">Производитель товара</label>
+        <input asp-for="Manufacturer" class="form-control" placeholder="Производитель">
+        <span asp-validation-for="Manufacturer" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Цена товара</label>
+        <input asp-for="Price" class="form-control" placeholder="Цена">
+        <span asp-validation-for="Price" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Image">Изображение товара</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Изображение">
+        <span asp-validation-for="Image" class="text-danger" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

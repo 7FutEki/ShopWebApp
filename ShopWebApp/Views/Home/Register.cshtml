@@ -1,0 +1,19 @@
+﻿@model CreateUserVM
+@{
+    Layout = "_LayoutFirst";
+}
+
+<form asp-action="Register" class="form-signin">
+    <div asp-validation-summary="ModelOnly" class="text-danger" />
+    <div class="form-group">
+        <label asp-for="Login">Логин</label>
+        <input asp-for="Login" class="form-control"placeholder="Введите логин">
+        <span asp-validation-for="Login" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">Пароль</label>
+        <input asp-for=Password type="password" class="form-control" placeholder="Пароль">
+        <span asp-validation-for="Password" class="text-danger" />
+    </div>
+    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+</form>

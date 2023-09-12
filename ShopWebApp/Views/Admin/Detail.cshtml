@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    Layout = "_LayoutForAdmin";
+}
+@model Admin
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">
+        @Model.Name, @Model.Surname
+
+    </h1>
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+        <div class="col-md-8">
+            <img class="img-fluid" src="@Model.Image" width="auto" height="a" alt="">
+        </div>
+
+        <div class="col-md-4">
+            <p>@Model.Email</p>
+
+        </div>
+        <a class="btn btn-primary btn-lg btn-block" asp-controller="Admin" asp-action="EditAccount" asp-route-id="@Model.Id" type="submit">Редактировать</a>
+    </div>
+    <!-- /.row -->
+    <!-- Related Projects Row -->
+
+
+</div>
